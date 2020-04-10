@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Repo } from '../repo';
 
 @Component({
@@ -17,7 +18,11 @@ export class RepoComponent implements OnInit {
     new Repo(6,'Plot my world domination plan','Cause I am an evil overlord'),
   ];
 
-
+  addNewRepo(repo){
+    let repoLength = this.repos.length;
+    repo.id = repoLength+1;
+    this.repos.push(repo)
+  }
 
   toggleDetails(index){
     this.repos[index].showDescription = !this.repos[index].showDescription;

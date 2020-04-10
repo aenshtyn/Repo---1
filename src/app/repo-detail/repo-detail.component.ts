@@ -12,7 +12,7 @@ export class RepoDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

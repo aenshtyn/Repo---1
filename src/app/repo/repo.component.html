@@ -1,10 +1,17 @@
 <div class="container">
   <h1>Repos</h1>
-  <ul>
-      <div *ngFor='let repo of repos; let i = index'>
-        {{repo.name}}
-         <button (click)='toggleDetails(i)'>Toggle Details</button>
+  <div class="row">
+      <div *ngFor='let repo of repos; let i = index' class = "container" >
+        <p>  {{repo.name}}  </p>
+        <button (click)='toggleDetails(i)'>Toggle Details</button>
+
+
         <app-repo-detail *ngIf='repo.showDescription' [repo] = 'repo'></app-repo-detail>
       </div>
-  </ul>
-</div>
+    </div>
+
+      <app-git-form (addRepo)="addNewRepo ($event)"></app-git-form>
+      <div class = "footer">
+        <h6>Made by Aenshtyn <br> 2020</h6>
+      </div>
+    </div>
