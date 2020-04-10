@@ -1,5 +1,6 @@
 export class Repo {
-  id: number;
-  name: string;
-  link: hyperlink;
+  showDescription: boolean;
+  constructor(public id: number,public name: string,public description: string){
+    this.showDescription=false;
+  }
 }

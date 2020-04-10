@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from './repo';
+import { Repo } from '../repo';
 
 @Component({
   selector: 'app-repo',
@@ -8,18 +8,22 @@ import { Repo } from './repo';
 })
 export class RepoComponent implements OnInit {
 
-  repos:Repo[] = [
-    {id:1, name:'Watch finding Nemo', link: "https://github.com/aenshtyn/"},
-    {id:2,name:'Buy Cookies'},
-    {id:3,name:'Get new Phone Case'},
-    {id:4,name:'Get Dog Food'},
-    {id:5,name:'Solve math homework'},
-    {id:6,name:'Plot my world domination plan'},
+  repos: Repo[] = [
+    new Repo(1, 'Watch finding Nemo', 'Find an online version and watch merlin find his son'),
+    new Repo(2,'Buy Cookies','I have to buy cookies for the parrot'),
+    new Repo(3,'Get new Phone Case','Diana has her birthday coming up soon'),
+    new Repo(4,'Get Dog Food','Pupper likes expensive snacks'),
+    new Repo(5,'Solve math homework','Damn Math'),
+    new Repo(6,'Plot my world domination plan','Cause I am an evil overlord'),
   ];
 
+
+
+  toggleDetails(index){
+    this.repos[index].showDescription = !this.repos[index].showDescription;
+  }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
 }

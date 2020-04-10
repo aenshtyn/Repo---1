@@ -1,8 +1,10 @@
-<div>
+<div class="container">
   <h1>Repos</h1>
   <ul>
-      <li *ngFor='let repo of repos'>
-        {{repo.link}}
-      </li>
+      <div *ngFor='let repo of repos; let i = index'>
+        {{repo.name}}
+         <button (click)='toggleDetails(i)'>Toggle Details</button>
+        <app-repo-detail *ngIf='repo.showDescription' [repo] = 'repo'></app-repo-detail>
+      </div>
   </ul>
 </div>
