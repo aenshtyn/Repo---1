@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Repo } from '../repo';
+import { RepoService } from '../git-service/repo.service';
 
 @Component({
   selector: 'app-repo',

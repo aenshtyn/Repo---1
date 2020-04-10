@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Repos } from '../repos';
+import { Repo } from '../repo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RepoService {
 
-  getRepos(){
-    return Repos    
+  getRepo(){
+    return Repo
   }
 
   constructor() { }
